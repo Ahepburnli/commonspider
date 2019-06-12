@@ -1,0 +1,552 @@
+2019-06-12 19:47:16 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: commonspider)
+2019-06-12 19:47:16 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.9, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.6.8 (default, Jan 14 2019, 11:02:34) - [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Linux-4.15.0-51-generic-x86_64-with-Ubuntu-18.04-bionic
+2019-06-12 19:47:16 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'commonspider', 'DOWNLOAD_DELAY': 1, 'LOG_FILE': '/home/hepburn/commonspider/commonspider/log/common-2019-06-12.log', 'NEWSPIDER_MODULE': 'commonspider.spiders', 'SPIDER_MODULES': ['commonspider.spiders']}
+2019-06-12 19:47:16 [scrapy.extensions.telnet] INFO: Telnet Password: 035c53c73fd76055
+2019-06-12 19:47:16 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-12 19:47:16 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-12 19:47:16 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-12 19:47:16 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2019-06-12 19:47:16 [scrapy.core.engine] INFO: Spider opened
+2019-06-12 19:47:16 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-12 19:47:16 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-06-12 19:47:16 [scrapy.core.engine] ERROR: Error while obtaining start requests
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/pandas/core/indexes/base.py", line 2442, in get_loc
+    return self._engine.get_loc(key)
+  File "pandas/_libs/index.pyx", line 132, in pandas._libs.index.IndexEngine.get_loc (pandas/_libs/index.c:5280)
+  File "pandas/_libs/index.pyx", line 154, in pandas._libs.index.IndexEngine.get_loc (pandas/_libs/index.c:5126)
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1210, in pandas._libs.hashtable.PyObjectHashTable.get_item (pandas/_libs/hashtable.c:20523)
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1218, in pandas._libs.hashtable.PyObjectHashTable.get_item (pandas/_libs/hashtable.c:20477)
+KeyError: 'title_rule'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hepburn/.local/lib/python3.6/site-packages/scrapy/core/engine.py", line 127, in _next_request
+    request = next(slot.start_requests)
+  File "/home/hepburn/commonspider/commonspider/spiders/common.py", line 23, in start_requests
+    title_rule = df['title_rule'].values
+  File "/usr/local/lib/python3.6/dist-packages/pandas/core/frame.py", line 1964, in __getitem__
+    return self._getitem_column(key)
+  File "/usr/local/lib/python3.6/dist-packages/pandas/core/frame.py", line 1971, in _getitem_column
+    return self._get_item_cache(key)
+  File "/usr/local/lib/python3.6/dist-packages/pandas/core/generic.py", line 1645, in _get_item_cache
+    values = self._data.get(item)
+  File "/usr/local/lib/python3.6/dist-packages/pandas/core/internals.py", line 3590, in get
+    loc = self.items.get_loc(item)
+  File "/usr/local/lib/python3.6/dist-packages/pandas/core/indexes/base.py", line 2444, in get_loc
+    return self._engine.get_loc(self._maybe_cast_indexer(key))
+  File "pandas/_libs/index.pyx", line 132, in pandas._libs.index.IndexEngine.get_loc (pandas/_libs/index.c:5280)
+  File "pandas/_libs/index.pyx", line 154, in pandas._libs.index.IndexEngine.get_loc (pandas/_libs/index.c:5126)
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1210, in pandas._libs.hashtable.PyObjectHashTable.get_item (pandas/_libs/hashtable.c:20523)
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1218, in pandas._libs.hashtable.PyObjectHashTable.get_item (pandas/_libs/hashtable.c:20477)
+KeyError: 'title_rule'
+2019-06-12 19:47:16 [scrapy.core.engine] INFO: Closing spider (finished)
+2019-06-12 19:47:16 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 6, 12, 11, 47, 16, 761814),
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 9,
+ 'memusage/max': 89825280,
+ 'memusage/startup': 89825280,
+ 'start_time': datetime.datetime(2019, 6, 12, 11, 47, 16, 710458)}
+2019-06-12 19:47:16 [scrapy.core.engine] INFO: Spider closed (finished)
+2019-06-12 19:48:24 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: commonspider)
+2019-06-12 19:48:24 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.9, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.6.8 (default, Jan 14 2019, 11:02:34) - [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Linux-4.15.0-51-generic-x86_64-with-Ubuntu-18.04-bionic
+2019-06-12 19:48:24 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'commonspider', 'DOWNLOAD_DELAY': 1, 'LOG_FILE': '/home/hepburn/commonspider/commonspider/log/common-2019-06-12.log', 'NEWSPIDER_MODULE': 'commonspider.spiders', 'SPIDER_MODULES': ['commonspider.spiders']}
+2019-06-12 19:48:24 [scrapy.extensions.telnet] INFO: Telnet Password: 62ab88bf0c925792
+2019-06-12 19:48:24 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-12 19:48:24 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-12 19:48:24 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-12 19:48:24 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2019-06-12 19:48:24 [scrapy.core.engine] INFO: Spider opened
+2019-06-12 19:48:24 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-12 19:48:24 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-06-12 19:48:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.vintorio.com/collections/best-sellers?page=1> (referer: None)
+2019-06-12 19:48:26 [root] DEBUG: $19.95
+2019-06-12 19:48:26 [root] DEBUG: Vintorio Wine Aerator Pourer
+2019-06-12 19:48:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$19.95', 'title': 'Vintorio Wine Aerator Pourer'}
+2019-06-12 19:48:26 [root] DEBUG: $35.95
+2019-06-12 19:48:26 [root] DEBUG: Omni Screw-Pull Lever Wine Bottle Opener
+2019-06-12 19:48:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$35.95', 'title': 'Omni Screw-Pull Lever Wine Bottle Opener'}
+2019-06-12 19:48:26 [root] DEBUG: $28.95
+2019-06-12 19:48:26 [root] DEBUG: Omni Wine Aerator
+2019-06-12 19:48:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$28.95', 'title': 'Omni Wine Aerator'}
+2019-06-12 19:48:26 [root] DEBUG: $14.95
+2019-06-12 19:48:26 [root] DEBUG: Vintorio Waiter's Corkscrew
+2019-06-12 19:48:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$14.95', 'title': "Vintorio Waiter's Corkscrew"}
+2019-06-12 19:48:26 [scrapy.core.engine] INFO: Closing spider (finished)
+2019-06-12 19:48:26 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 246,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 20759,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 6, 12, 11, 48, 26, 612443),
+ 'item_scraped_count': 4,
+ 'log_count/DEBUG': 13,
+ 'log_count/INFO': 9,
+ 'memusage/max': 88989696,
+ 'memusage/startup': 88989696,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2019, 6, 12, 11, 48, 24, 982101)}
+2019-06-12 19:48:26 [scrapy.core.engine] INFO: Spider closed (finished)
+2019-06-12 19:52:24 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: commonspider)
+2019-06-12 19:52:24 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.9, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.6.8 (default, Jan 14 2019, 11:02:34) - [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Linux-4.15.0-51-generic-x86_64-with-Ubuntu-18.04-bionic
+2019-06-12 19:52:24 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'commonspider', 'DOWNLOAD_DELAY': 1, 'LOG_FILE': '/home/hepburn/commonspider/commonspider/log/common-2019-06-12.log', 'NEWSPIDER_MODULE': 'commonspider.spiders', 'SPIDER_MODULES': ['commonspider.spiders']}
+2019-06-12 19:52:24 [scrapy.extensions.telnet] INFO: Telnet Password: d6e8cb064d54d795
+2019-06-12 19:52:24 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-12 19:52:24 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-12 19:52:24 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-12 19:52:24 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2019-06-12 19:52:24 [scrapy.core.engine] INFO: Spider opened
+2019-06-12 19:52:24 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-12 19:52:24 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-06-12 19:52:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.vintorio.com/collections/best-sellers?page=1> (referer: None)
+2019-06-12 19:52:25 [root] DEBUG: $19.95
+2019-06-12 19:52:25 [root] DEBUG: Vintorio Wine Aerator Pourer
+2019-06-12 19:52:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$19.95',
+ 'title': 'Vintorio Wine Aerator Pourer',
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 19:52:25 [root] DEBUG: $35.95
+2019-06-12 19:52:25 [root] DEBUG: Omni Screw-Pull Lever Wine Bottle Opener
+2019-06-12 19:52:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$35.95',
+ 'title': 'Omni Screw-Pull Lever Wine Bottle Opener',
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 19:52:25 [root] DEBUG: $28.95
+2019-06-12 19:52:25 [root] DEBUG: Omni Wine Aerator
+2019-06-12 19:52:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$28.95',
+ 'title': 'Omni Wine Aerator',
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 19:52:25 [root] DEBUG: $14.95
+2019-06-12 19:52:25 [root] DEBUG: Vintorio Waiter's Corkscrew
+2019-06-12 19:52:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$14.95',
+ 'title': "Vintorio Waiter's Corkscrew",
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 19:52:25 [scrapy.core.engine] INFO: Closing spider (finished)
+2019-06-12 19:52:25 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 246,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 20759,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 6, 12, 11, 52, 25, 494304),
+ 'item_scraped_count': 4,
+ 'log_count/DEBUG': 13,
+ 'log_count/INFO': 9,
+ 'memusage/max': 89858048,
+ 'memusage/startup': 89858048,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2019, 6, 12, 11, 52, 24, 99455)}
+2019-06-12 19:52:25 [scrapy.core.engine] INFO: Spider closed (finished)
+2019-06-12 19:53:51 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: commonspider)
+2019-06-12 19:53:51 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.9, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.6.8 (default, Jan 14 2019, 11:02:34) - [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Linux-4.15.0-51-generic-x86_64-with-Ubuntu-18.04-bionic
+2019-06-12 19:53:51 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'commonspider', 'DOWNLOAD_DELAY': 1, 'LOG_FILE': '/home/hepburn/commonspider/commonspider/log/common-2019-06-12.log', 'NEWSPIDER_MODULE': 'commonspider.spiders', 'SPIDER_MODULES': ['commonspider.spiders']}
+2019-06-12 19:53:51 [scrapy.extensions.telnet] INFO: Telnet Password: 63756c601178e24d
+2019-06-12 19:53:51 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-12 19:53:51 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-12 19:53:51 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-12 19:53:51 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2019-06-12 19:53:51 [scrapy.core.engine] INFO: Spider opened
+2019-06-12 19:53:51 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-12 19:53:51 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-06-12 19:53:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.vintorio.com/collections/best-sellers?page=1> (referer: None)
+2019-06-12 19:53:53 [root] DEBUG: $19.95
+2019-06-12 19:53:53 [root] DEBUG: Vintorio Wine Aerator Pourer
+2019-06-12 19:53:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$19.95',
+ 'title': 'Vintorio Wine Aerator Pourer',
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 19:53:53 [root] DEBUG: $35.95
+2019-06-12 19:53:53 [root] DEBUG: Omni Screw-Pull Lever Wine Bottle Opener
+2019-06-12 19:53:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$35.95',
+ 'title': 'Omni Screw-Pull Lever Wine Bottle Opener',
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 19:53:53 [root] DEBUG: $28.95
+2019-06-12 19:53:53 [root] DEBUG: Omni Wine Aerator
+2019-06-12 19:53:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$28.95',
+ 'title': 'Omni Wine Aerator',
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 19:53:53 [root] DEBUG: $14.95
+2019-06-12 19:53:53 [root] DEBUG: Vintorio Waiter's Corkscrew
+2019-06-12 19:53:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$14.95',
+ 'title': "Vintorio Waiter's Corkscrew",
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 19:53:53 [scrapy.core.engine] INFO: Closing spider (finished)
+2019-06-12 19:53:53 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 246,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 20759,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 6, 12, 11, 53, 53, 213323),
+ 'item_scraped_count': 4,
+ 'log_count/DEBUG': 13,
+ 'log_count/INFO': 9,
+ 'memusage/max': 88899584,
+ 'memusage/startup': 88899584,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2019, 6, 12, 11, 53, 51, 122047)}
+2019-06-12 19:53:53 [scrapy.core.engine] INFO: Spider closed (finished)
+2019-06-12 20:12:39 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: commonspider)
+2019-06-12 20:12:39 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.9, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.6.8 (default, Jan 14 2019, 11:02:34) - [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Linux-4.15.0-51-generic-x86_64-with-Ubuntu-18.04-bionic
+2019-06-12 20:12:39 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'commonspider', 'DOWNLOAD_DELAY': 1, 'LOG_FILE': '/home/hepburn/commonspider/commonspider/log/common-2019-06-12.log', 'NEWSPIDER_MODULE': 'commonspider.spiders', 'SPIDER_MODULES': ['commonspider.spiders']}
+2019-06-12 20:12:39 [scrapy.extensions.telnet] INFO: Telnet Password: c6fd65ab4128708d
+2019-06-12 20:12:39 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-12 20:12:39 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-12 20:12:39 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-12 20:12:39 [scrapy.middleware] INFO: Enabled item pipelines:
+['commonspider.pipelines.CommonspiderPipeline']
+2019-06-12 20:12:39 [scrapy.core.engine] INFO: Spider opened
+2019-06-12 20:12:39 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-12 20:12:39 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-06-12 20:12:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.vintorio.com/collections/best-sellers?page=1> (referer: None)
+2019-06-12 20:12:41 [root] DEBUG: $19.95
+2019-06-12 20:12:41 [root] DEBUG: Vintorio Wine Aerator Pourer
+2019-06-12 20:12:41 [root] DEBUG: insert mysql success
+2019-06-12 20:12:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$19.95',
+ 'title': 'Vintorio Wine Aerator Pourer',
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 20:12:41 [root] DEBUG: $35.95
+2019-06-12 20:12:41 [root] DEBUG: Omni Screw-Pull Lever Wine Bottle Opener
+2019-06-12 20:12:41 [root] DEBUG: insert mysql success
+2019-06-12 20:12:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$35.95',
+ 'title': 'Omni Screw-Pull Lever Wine Bottle Opener',
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 20:12:41 [root] DEBUG: $28.95
+2019-06-12 20:12:41 [root] DEBUG: Omni Wine Aerator
+2019-06-12 20:12:41 [root] DEBUG: insert mysql success
+2019-06-12 20:12:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$28.95',
+ 'title': 'Omni Wine Aerator',
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 20:12:41 [root] DEBUG: $14.95
+2019-06-12 20:12:41 [root] DEBUG: Vintorio Waiter's Corkscrew
+2019-06-12 20:12:41 [root] DEBUG: insert mysql success
+2019-06-12 20:12:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$14.95',
+ 'title': "Vintorio Waiter's Corkscrew",
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 20:12:41 [scrapy.core.engine] INFO: Closing spider (finished)
+2019-06-12 20:12:41 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 246,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 20759,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 6, 12, 12, 12, 41, 624272),
+ 'item_scraped_count': 4,
+ 'log_count/DEBUG': 17,
+ 'log_count/INFO': 9,
+ 'memusage/max': 90677248,
+ 'memusage/startup': 90677248,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2019, 6, 12, 12, 12, 39, 411364)}
+2019-06-12 20:12:41 [scrapy.core.engine] INFO: Spider closed (finished)
+2019-06-12 20:14:56 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: commonspider)
+2019-06-12 20:14:56 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.9, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.6.8 (default, Jan 14 2019, 11:02:34) - [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Linux-4.15.0-51-generic-x86_64-with-Ubuntu-18.04-bionic
+2019-06-12 20:14:56 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'commonspider', 'DOWNLOAD_DELAY': 1, 'LOG_FILE': '/home/hepburn/commonspider/commonspider/log/common-2019-06-12.log', 'NEWSPIDER_MODULE': 'commonspider.spiders', 'SPIDER_MODULES': ['commonspider.spiders']}
+2019-06-12 20:14:56 [scrapy.extensions.telnet] INFO: Telnet Password: 4af8c6bd4ad44428
+2019-06-12 20:14:56 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-12 20:14:56 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-12 20:14:56 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-12 20:14:56 [scrapy.middleware] INFO: Enabled item pipelines:
+['commonspider.pipelines.CommonspiderPipeline']
+2019-06-12 20:14:56 [scrapy.core.engine] INFO: Spider opened
+2019-06-12 20:14:56 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-12 20:14:56 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-06-12 20:14:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.vintorio.com/collections/best-sellers?page=1> (referer: None)
+2019-06-12 20:14:57 [root] DEBUG: $19.95
+2019-06-12 20:14:57 [root] DEBUG: Vintorio Wine Aerator Pourer
+2019-06-12 20:14:57 [root] DEBUG: insert mysql success
+2019-06-12 20:14:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$19.95',
+ 'title': 'Vintorio Wine Aerator Pourer',
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 20:14:57 [root] DEBUG: $35.95
+2019-06-12 20:14:57 [root] DEBUG: Omni Screw-Pull Lever Wine Bottle Opener
+2019-06-12 20:14:57 [root] DEBUG: insert mysql success
+2019-06-12 20:14:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$35.95',
+ 'title': 'Omni Screw-Pull Lever Wine Bottle Opener',
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 20:14:57 [root] DEBUG: $28.95
+2019-06-12 20:14:57 [root] DEBUG: Omni Wine Aerator
+2019-06-12 20:14:57 [root] DEBUG: insert mysql success
+2019-06-12 20:14:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$28.95',
+ 'title': 'Omni Wine Aerator',
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 20:14:57 [root] DEBUG: $14.95
+2019-06-12 20:14:57 [root] DEBUG: Vintorio Waiter's Corkscrew
+2019-06-12 20:14:57 [root] DEBUG: insert mysql success
+2019-06-12 20:14:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$14.95',
+ 'title': "Vintorio Waiter's Corkscrew",
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 20:14:57 [scrapy.core.engine] INFO: Closing spider (finished)
+2019-06-12 20:14:57 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 246,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 20756,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 6, 12, 12, 14, 57, 829539),
+ 'item_scraped_count': 4,
+ 'log_count/DEBUG': 17,
+ 'log_count/INFO': 9,
+ 'memusage/max': 90480640,
+ 'memusage/startup': 90480640,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2019, 6, 12, 12, 14, 56, 444735)}
+2019-06-12 20:14:57 [scrapy.core.engine] INFO: Spider closed (finished)
+2019-06-12 20:19:17 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: commonspider)
+2019-06-12 20:19:17 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.9, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 18.9.0, Python 3.6.8 (default, Jan 14 2019, 11:02:34) - [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Linux-4.15.0-51-generic-x86_64-with-Ubuntu-18.04-bionic
+2019-06-12 20:19:17 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'commonspider', 'DOWNLOAD_DELAY': 1, 'LOG_FILE': '/home/hepburn/commonspider/commonspider/log/common-2019-06-12.log', 'NEWSPIDER_MODULE': 'commonspider.spiders', 'SPIDER_MODULES': ['commonspider.spiders']}
+2019-06-12 20:19:17 [scrapy.extensions.telnet] INFO: Telnet Password: d5b118bf6962e290
+2019-06-12 20:19:17 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-12 20:19:17 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-12 20:19:17 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-12 20:19:17 [scrapy.middleware] INFO: Enabled item pipelines:
+['commonspider.pipelines.CommonspiderPipeline']
+2019-06-12 20:19:17 [scrapy.core.engine] INFO: Spider opened
+2019-06-12 20:19:17 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-12 20:19:17 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-06-12 20:19:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.vintorio.com/collections/best-sellers?page=1> (referer: None)
+2019-06-12 20:19:19 [root] DEBUG: $19.95
+2019-06-12 20:19:19 [root] DEBUG: Vintorio Wine Aerator Pourer
+2019-06-12 20:19:19 [root] DEBUG: insert mysql success
+2019-06-12 20:19:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$19.95',
+ 'title': 'Vintorio Wine Aerator Pourer',
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 20:19:19 [root] DEBUG: $35.95
+2019-06-12 20:19:19 [root] DEBUG: Omni Screw-Pull Lever Wine Bottle Opener
+2019-06-12 20:19:19 [root] DEBUG: insert mysql success
+2019-06-12 20:19:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$35.95',
+ 'title': 'Omni Screw-Pull Lever Wine Bottle Opener',
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 20:19:19 [root] DEBUG: $28.95
+2019-06-12 20:19:19 [root] DEBUG: Omni Wine Aerator
+2019-06-12 20:19:19 [root] DEBUG: insert mysql success
+2019-06-12 20:19:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$28.95',
+ 'title': 'Omni Wine Aerator',
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 20:19:19 [root] DEBUG: $14.95
+2019-06-12 20:19:19 [root] DEBUG: Vintorio Waiter's Corkscrew
+2019-06-12 20:19:19 [root] DEBUG: insert mysql success
+2019-06-12 20:19:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.vintorio.com/collections/best-sellers?page=1>
+{'price': '$14.95',
+ 'title': "Vintorio Waiter's Corkscrew",
+ 'url': 'https://www.vintorio.com/collections/best-sellers?page=1'}
+2019-06-12 20:19:19 [scrapy.core.engine] INFO: Closing spider (finished)
+2019-06-12 20:19:19 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 246,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 20760,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 6, 12, 12, 19, 19, 996570),
+ 'item_scraped_count': 4,
+ 'log_count/DEBUG': 17,
+ 'log_count/INFO': 9,
+ 'memusage/max': 90034176,
+ 'memusage/startup': 90034176,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2019, 6, 12, 12, 19, 17, 356050)}
+2019-06-12 20:19:19 [scrapy.core.engine] INFO: Spider closed (finished)
