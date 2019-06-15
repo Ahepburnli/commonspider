@@ -14,3 +14,4 @@ class CommonspiderItem(scrapy.Item):
     price = scrapy.Field()  # 价格
     title = scrapy.Field()  # 标题
     url = scrapy.Field()  # 标题
+    product_id = scrapy.Field()  # 唯一商品id

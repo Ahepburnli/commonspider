@@ -92,6 +92,8 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
+HTTPERROR_ALLOWED_CODES = [301]
+
 
 today = datetime.datetime.now().strftime('%Y-%m-%d')
 log_path = '/home/hepburn/commonspider/commonspider/log/common-{}.log'.format(today)

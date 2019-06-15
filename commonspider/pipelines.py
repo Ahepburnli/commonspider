@@ -23,11 +23,14 @@ class CommonspiderPipeline(object):
         self.cs1 = self.conn.cursor()
 
     def process_item(self, item, spider):
-        sql = 'insert ignore into commonspider (url, price, title) values (%s,%s,%s)'
-        self.conn.ping(reconnect=True)  # 若数据库断开连接则重连
-        self.cs1.execute(sql, (item['url'], item['price'], item['title']))
-        self.conn.commit()
-        logging.debug('insert mysql success')
+        try:
+            sql = 'INSERT IGNORE into commonspider (url, price, title,product_id) values (%s,%s,%s,%s)'
+            self.conn.ping(reconnect=True)  # 若数据库断开连接则重连
+            self.cs1.execute(sql, (item['url'], item['price'], item['title'], item['product_id']))
+            self.conn.commit()
+            logging.debug('insert mysql success')
+        except Exception as e:
+            logging.debug('插入数据库失败---------------------%s' % e)
 
         return item
 
